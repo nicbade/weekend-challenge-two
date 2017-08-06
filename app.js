@@ -9,24 +9,6 @@ var math = [];
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/input', function(req, res) {
-    console.log(req.body);
-    var inputOne = req.body.inputOne;
-    var inputTwo = req.body.inputTwo;
-    var inputType = req.body.inputType;
-    calculator(inputOne, inputTwo, inputType);
-    console.log(math);
-})
-
-app.get('/input', function(req, res) {
-    res.send(math);
-})
-
-
-app.listen(port, function() {
-    console.log('listening on port', port);
-});
-
 function calculator(inputOne, inputTwo, inputType) {
     if (inputType === 'add') {
         math = [+inputOne + +inputTwo]; //+ =  parsInt
@@ -39,3 +21,21 @@ function calculator(inputOne, inputTwo, inputType) {
     }
     return math;
 }
+
+app.post('/input', function(req, res) {
+    console.log(req.body);
+    var inputOne = req.body.inputOne;
+    var inputTwo = req.body.inputTwo;
+    var inputType = req.body.inputType;
+    calculator(inputOne, inputTwo, inputType);
+    res.send(math);
+})
+
+app.get('/input', function(req, res) {
+    res.send(math);
+})
+
+
+app.listen(port, function() {
+    console.log('listening on port', port);
+});

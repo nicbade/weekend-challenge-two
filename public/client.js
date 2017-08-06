@@ -27,7 +27,14 @@ $(document).ready(function() {
                     }
                 }) //ajax post
         }) // button click event listener
+    $('#clear').on('click', function() {
+        $('#inputOne').val('');
+        $('#inputTwo').val('');
+        $('#answer').empty();
+
+    })
 })
+
 
 function getInput() {
     $.ajax({
@@ -36,6 +43,12 @@ function getInput() {
             success: function(response) {
                 console.log('client.js GET', response);
                 $('#answer').prepend('<p>' + response + '</p>'); //currently posts upon refresh
+                clearInput(response);
             }
         }) // end ajax get
 } // end getInput function
+
+function clearInput(finalAnswer) {
+    $('#answer').empty();
+    $('#answer').html(finalAnswer);
+}
