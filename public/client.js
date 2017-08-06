@@ -15,6 +15,13 @@ $(document).ready(function() {
             inputTwo: inputTwo,
             inputType: inputType,
         }
-
+        $.ajax({
+            method: 'POST',
+            url: '/input',
+            data: inputObject,
+            success: function(response) {
+                console.log('client.js POST', response);
+            }
+        })
     })
 })

@@ -1,0 +1,19 @@
+{
+  "name": "weekend-challenge-two",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicbade/weekend-challenge-two.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicbade/weekend-challenge-two/issues"
+  },
+  "homepage": "https://github.com/nicbade/weekend-challenge-two#readme"
+}
