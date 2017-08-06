@@ -28,13 +28,13 @@ app.listen(port, function() {
 });
 
 function calculator(inputOne, inputTwo, inputType) {
-    if (inputType == 'add') {
+    if (inputType === 'add') {
         math = [+inputOne + +inputTwo]; //+ =  parsInt
-    } else if (inputType == 'subtract') {
+    } else if (inputType === 'subtract') {
         math = [+inputOne - +inputTwo];
-    } else if (inputType == 'divide') {
+    } else if (inputType === 'divide') {
         math = [+inputOne / +inputTwo];
-    } else if (inputType == 'multiply') {
+    } else {
         math = [+inputOne * +inputTwo];
     }
     return math;

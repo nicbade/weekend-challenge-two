@@ -2,8 +2,9 @@ console.log('JS sourced');
 
 $(document).ready(function() {
     console.log('jQuery sourced');
-    getInput();
+    getInput(); //refreshes get upon DOM loading
     $('.button').on('click', function() {
+            getInput();
             console.log('Button clicked!');
             //pulls value of input cells and also the button type
             var inputOne = $('#inputOne').val();
@@ -34,8 +35,7 @@ function getInput() {
             url: '/input',
             success: function(response) {
                 console.log('client.js GET', response);
-                $('#answer').prepend('<p>' + (response) + '</p>');
-
+                $('#answer').prepend('<p>' + response + '</p>'); //currently posts upon refresh
             }
         }) // end ajax get
 } // end getInput function
