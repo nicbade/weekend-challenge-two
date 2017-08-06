@@ -2,7 +2,7 @@ console.log('JS sourced');
 
 $(document).ready(function() {
     console.log('jQuery sourced');
-    getInput(); //refreshes get upon DOM loading
+    // getInput(); //refreshes get upon DOM loading
     $('.button').on('click', function() {
             getInput();
             console.log('Button clicked!');
@@ -42,7 +42,7 @@ function getInput() {
             url: '/input',
             success: function(response) {
                 console.log('client.js GET', response);
-                $('#answer').prepend('<p>' + response + '</p>'); //currently posts upon refresh
+                $('#answer').append('<p>' + response + '</p>');
                 clearInput(response);
             }
         }) // end ajax get
