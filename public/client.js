@@ -25,3 +25,13 @@ $(document).ready(function() {
         })
     })
 })
+
+function getInput() {
+    $.ajax({
+        method: 'GET',
+        url: '/input',
+        success: function(response) {
+            console.log('client.js GET', response);
+        }
+    })
+}
