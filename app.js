@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 function calculator(inputOne, inputTwo, inputType) {
     if (inputType === 'add') {
-        math = [+inputOne + +inputTwo]; //+ =  parsInt
+        math = [+inputOne + +inputTwo]; //+ =  parsInt thx templin!
     } else if (inputType === 'subtract') {
         math = [+inputOne - +inputTwo];
     } else if (inputType === 'divide') {

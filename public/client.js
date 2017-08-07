@@ -42,7 +42,7 @@ function getInput() {
             url: '/input',
             success: function(response) {
                 console.log('client.js GET', response);
-                $('#answer').append('<p>' + response + '</p>');
+                $('#answer').append('<p id="answer">' + response + '</p>');
                 clearInput(response);
             }
         }) // end ajax get
